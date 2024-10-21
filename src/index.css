@@ -1,0 +1,179 @@
+/* src/index.css */
+
+/* שליטה על גודל השדות */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%; /* גורם לשדות לתפוס את כל רוחב האלמנט ההורה */
+  padding: 1px; /* מוסיף ריווח בתוך השדה */
+  font-size: 20px; /* מגדיר את גודל הטקסט בתוך השדה */
+  border-radius: 5px; /* פינות מעוגלות */
+  border: 0.5px solid #030101; /* צבע מסגרת */
+}
+
+/* שליטה על הכפתור */
+button {
+  background-color: #ec813a;
+  color: rgb(224, 117, 68);
+  font-size: 18px; /* גודל טקסט הכפתור */
+  padding: 10px 20px; /* ריווח פנימי בכפתור */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e2723e;
+}
+
+
+form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* במובייל טור אחד */
+  gap: 20px; /* רווחים בין השדות */
+}
+
+@media (min-width: 768px) {
+  form {
+    grid-template-columns: repeat(2, 1fr); /* בשולחן עבודה 2 טורים */
+  }
+}
+
+.scroll-button {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: center;
+}
+
+header {
+  background-color: #eccba8;
+  padding: 20px;
+}
+
+main img {
+  max-width: 100%;
+  width: 50%;
+}
+
+footer {
+  background-color: #D06765;
+  color: rgb(236, 219, 219);
+  padding: 30px;
+}
+
+h1 {
+  color: #007bff;
+}
+
+footer p {
+  font-size: 50px;
+}
+
+p {
+  font-size: 40px;
+}
+
+.scroll-button {
+  /* width: 100%; */
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  /* top: 20px; */
+  padding: 20px 40px;
+  background-color: #e9b273;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  z-index: 1000;
+}
+
+.scroll-button:hover {
+  background-color: #d86334;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* טור אחד במובייל */
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  form {
+    grid-template-columns: repeat(2, 1fr); /* שני טורים בטאבלטים ומעלה */
+  }
+}
+
+@media (min-width: 768px) {
+  img {
+    width: 50%; /* בתצוגות רחבות יותר, להקטין את רוחב התמונות */
+  }
+}
+
+.animated-images-section {
+  padding: 4rem 0;
+  background-color: #ecceb5;
+}
+
+.animated-images-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.animated-images-section .section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #D06765;
+}
+
+.animated-images-section .images-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.animated-image-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-image {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #e9b273;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.animated-image:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .animated-images-section .images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .animated-image-container {
+    padding-bottom: 90%; /* 4:3 Aspect Ratio */
+  }
+}
+
